@@ -1,7 +1,9 @@
 import { useState, useEffect} from 'react'
+import { MovieProps } from './models/MovieProps'
+import CardGrid from './components/CardGrid'
 
 const App = () => {
-  const [movies, setMovies] = useState<string[]>([])
+  const [movies, setMovies] = useState<MovieProps[]>([])
 
   const url = 'https://api.themoviedb.org/3/trending/all/day?api_key=';
   const key = '0493315db205d26d27cfee3b1956d4d0'
@@ -16,7 +18,7 @@ const App = () => {
       console.error(err);
     }
   }
-  console.log(movies)
+
   useEffect(() => {
     fetchMovies()
   }, [])
@@ -25,7 +27,7 @@ const App = () => {
     <section>
       <header>Movie Flex</header>
       <main>
-
+        <CardGrid props={movies}/>
       </main>
     </section>
   )
