@@ -1,0 +1,20 @@
+:root {
+  --blue: #4B769E;
+
+  --white: #EAEAEA;
+
+  --yellow: #E8C341;
+
+  --black: #0E0E0E;
+  --overlay: rgba(0,0,0,0.7);
+
+
+}
+
+html {
+  background: var(--blue);
+}
+
+body {
+  /* background: var(--black); */
+}

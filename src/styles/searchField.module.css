@@ -1,0 +1,32 @@
+.searchFieldWrapper {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+input {
+    border: none;
+    padding: .7em 1em;
+    min-width: 60%;
+    font-size: 1em;
+    border-radius: .5em 0 0 .5em;
+}
+
+ input:focus,
+ input:active
+ {
+    outline: none;
+}
+
+.searchIcon {
+    background: white;
+    
+}
+
+.searchButton {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    padding: .8em 1em .7em 1em;
+    border-radius: 0 .5em .5em 0;
+}
