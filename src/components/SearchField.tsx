@@ -1,3 +1,6 @@
+import style from '../styles/searchField.module.css'
+import searchBtn from '../assets/img/search.svg'
+
 // import fetchMovies from './helperFunctions'
 interface Search {
     fetchMovies: (searchString: string) => void
@@ -7,8 +10,15 @@ interface Search {
 const SearchField = ({fetchMovies}: Search) => {
     
     return (
-        <section>
+        <section className={style.searchFieldWrapper}>
             <input type="text" onChange={(e) => fetchMovies(e.target.value)} />
+            <button className={style.searchButton}>
+                <img 
+                className={style.searchIcon} 
+                src={searchBtn} 
+                alt="search button" 
+                />
+            </button>
         </section>
     )
 }

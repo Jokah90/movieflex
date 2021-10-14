@@ -2,6 +2,7 @@ import { useState, useEffect} from 'react'
 import { MovieProps } from './models/MovieProps'
 import CardGrid from './components/CardGrid'
 import SearchField from './components/SearchField'
+import './App.css'
 
 const App = () => {
   const [movies, setMovies] = useState<MovieProps[]>([])
