@@ -16,8 +16,8 @@ const Card = ({movie}: Movies) => {
                         : movie.name
                     } 
                     ${movie.release_date 
-                        ? movie.release_date.substr(0,4) 
-                        : movie.first_air_date.substr(0,4)
+                        ? movie.release_date
+                        : movie.first_air_date
                     }
                 `}
             </h1>
