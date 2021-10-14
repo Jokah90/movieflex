@@ -7,4 +7,6 @@ export interface MovieProps {
     overview: string;
     genre_ids: number[];
     vote_average: number;
+    release_date: string;
+    first_air_date: string;
 }
