@@ -1,0 +1,50 @@
+.cardWrapper {
+    display: flex;
+    flex-direction: column;
+    height: 20em;
+    max-width: 100%;
+    border-bottom: 2px solid var(--black);
+    position: relative;
+}
+
+.cardWrapper:first-child {
+    margin-top: 1.5em;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0px;
+    margin: 0;
+    background: var(--overlay);
+    transition: height 0.4s ease-in-out;
+    height: 7em;
+}
+
+.rating {
+    display: flex;
+    position: absolute;    
+    right: .3em;
+    color: var(--yellow);
+    bottom: .3em;
+    font-size: .9em;
+    font-weight: 600;
+}
+
+.title {
+    font-size: 1em;
+    color: var(--white);
+    padding: 0 .6em;
+    margin: .6em 0;
+}
+
+.overview {
+    opacity: 0;
+    font-size: .85em;
+    padding: 1em 1em;
+    margin: 1em 0;
+    color: var(--white);
+    background: rgba(0,0,0,.4);
+    transition: opacity 0.6s ease-in-out;
+}
+
+p { margin: 0 .3em 0 .5em; }
