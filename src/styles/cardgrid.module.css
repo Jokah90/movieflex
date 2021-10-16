@@ -1,0 +1,16 @@
+.cardWrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+@media only screen and (min-width: 480px) {
+    .cardWrapper {
+        margin-top: 2em;
+        flex-direction: row;
+        flex-wrap: wrap;
+        max-width: 53.125em;
+        justify-content: center;
+        gap: 1em;
+    }
+
+}

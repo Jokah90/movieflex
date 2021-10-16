@@ -1,6 +1,4 @@
-.cardWrapper {
-    display: flex;
-    flex-direction: column;
+.card {
     height: 20em;
     max-width: 100%;
     border-bottom: 2px solid var(--black);
@@ -17,7 +15,7 @@
     margin: 0;
     background: var(--overlay);
     transition: height 0.4s ease-in-out;
-    height: 7em;
+    height: 5em;
 }
 
 .rating {
@@ -48,3 +46,14 @@
 }
 
 p { margin: 0 .3em 0 .5em; }
+
+@media only screen and (min-width: 480px) {
+    .card {
+        width: 185px;
+        height: 278px;
+    }
+
+    .overlay {
+        overflow: hidden;
+    }
+}

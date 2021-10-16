@@ -18,19 +18,19 @@ const Card = ({movie}: Movies) => {
     }
 
     const hideOverlay = () => {
-        setHeight('7em')
+        setHeight('5em')
         setOverView('0')
     }
 
 
     return (
-        <section className={style.cardWrapper} style={{ 
+        <section className={style.card} style={{ 
             backgroundImage: `url("${POSTERURL}")`,
             backgroundSize: `cover` 
-          }}
-          onMouseOver={showOverlay}
-          onMouseLeave={hideOverlay}
-          >
+        }}
+        onMouseOver={showOverlay}
+        onMouseLeave={hideOverlay}
+        >
             <section className={style.overlay} style={{ height: height }}>
                 <h1 className={style.title} >
                     {`
