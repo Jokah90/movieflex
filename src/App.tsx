@@ -3,7 +3,10 @@ import { useRecoilState } from 'recoil'
 import moviesAtom from './atoms/movies'
 import CardGrid from './components/CardGrid'
 import SearchField from './components/SearchField'
+import Navbar from './components/Navbar'
 import './App.css'
+import FavoriteList from './components/FavoriteList'
+import { Switch, Route } from 'react-router'
 
 const App = () => {
   const [movies, setMovies] = useRecoilState(moviesAtom)
@@ -39,8 +42,15 @@ useEffect(() => {
     <section>
       <header>Movie Flex</header>
       <main>
+        
         <SearchField fetchMovies={fetchMovies} />
-        <CardGrid movies={movies}/>
+        <Navbar />
+
+          {/* Routes */}
+        <Switch>
+          <Route path="/" exact>  <CardGrid movies={movies}/> </Route>
+          <Route path="/favorites">  <FavoriteList />  </Route>
+        </Switch>
       </main>
     </section>
   )

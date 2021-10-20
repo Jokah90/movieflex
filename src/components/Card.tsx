@@ -3,6 +3,7 @@ import { useRecoilState } from 'recoil'
 import { MovieProps } from "../models/MovieProps"
 import style from '../styles/card.module.css'
 import favoriteMovies from '../atoms/favorites'
+import { subReleaseDate, subOverView } from '../helperFunctions'
 
 interface Movie {
     movie: MovieProps
@@ -15,8 +16,6 @@ const Card = ({movie}: Movie) => {
     const [favorites, setFavorites] = useRecoilState(favoriteMovies)
 
     const POSTERURL = `https://image.tmdb.org/t/p/w500${movie.poster_path ? movie.poster_path : movie.backdrop_path}`
-
-
 
     const setFavoriteMovie = () => {
         if (movie) {
@@ -52,13 +51,12 @@ const Card = ({movie}: Movie) => {
                             ? movie.title 
                             : movie.name
                         } | 
-                        ${movie.release_date 
-                            ? movie.release_date
-                            : movie.first_air_date
+                        ${
+                             subReleaseDate(movie.release_date, movie.first_air_date)
                         }
                     `}
                 </h1>
-                <p className={style.overview} style={{ opacity: overView }}>{movie.overview}</p>
+                <p className={style.overview} style={{ opacity: overView }}>{subOverView(movie.overview)}</p>
                 <section className={style.rating}>
                     <button onClick={setFavoriteMovie}>+</button>
                     <i className="fas fa-star"></i>
