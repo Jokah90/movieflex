@@ -1,0 +1,48 @@
+.wrapper {
+    max-width: 850px;
+    display: flex;
+    justify-content: center;
+    margin: 1em .5em;
+}
+
+.moviePoster {
+    display: flex;
+    min-width: 7em;
+    max-width: 7em;
+    min-height: 7em;
+    max-height: 7em;
+}
+
+.movieContainer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.titleRating {
+    display: flex;
+    flex-direction: row;
+}
+
+.rating {
+    display: flex;
+    flex-direction: row;
+    padding-left: 1em;
+    font-size: .8em;
+    color: var(--yellow);
+}
+
+.movieTitle {
+    display: flex;
+    justify-content: space-between;
+    color: var(--white);
+    padding: .2em 1em;
+}
+
+
+
+.overview {
+    padding: 0 1rem;
+    color: var(--white);
+    font-size: 0.85em;
+}
