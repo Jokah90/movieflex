@@ -13,7 +13,7 @@ const FavoriteList = () => {
             {
             
             movies.map(movie => 
-                <section>
+                <section key={movie.id}>
                     <section style={{ 
                         backgroundImage: `url("${movie.poster_path || movie.backdrop_path}")`,
                         backgroundSize: `cover` 
