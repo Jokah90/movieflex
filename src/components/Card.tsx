@@ -1,16 +1,22 @@
 import { useState } from "react"
+import { useRecoilState } from 'recoil'
 import { MovieProps } from "../models/MovieProps"
 import style from '../styles/card.module.css'
+import favoriteMovies from '../atoms/favorites'
+import { subReleaseDate, subOverView, setFavoriteMovie } from '../helperFunctions'
 
-interface Movies {
+interface Movie {
     movie: MovieProps
 }
 
-const Card = ({movie}: Movies) => {
+const Card = ({movie}: Movie) => {
     const [height, setHeight] = useState<string>('')
     const [overView, setOverView] = useState<string>('0')
+    const [favorites, setFavorites] = useRecoilState(favoriteMovies)
 
     const POSTERURL = `https://image.tmdb.org/t/p/w500${movie.poster_path ? movie.poster_path : movie.backdrop_path}`
+
+
 
     const showOverlay = () => {
         setHeight('100%')
@@ -21,7 +27,6 @@ const Card = ({movie}: Movies) => {
         setHeight('5em')
         setOverView('0')
     }
-
 
     return (
         <section className={style.card} style={{ 
@@ -38,14 +43,23 @@ const Card = ({movie}: Movies) => {
                             ? movie.title 
                             : movie.name
                         } | 
-                        ${movie.release_date 
-                            ? movie.release_date
-                            : movie.first_air_date
+                        ${
+                             subReleaseDate(movie.release_date, movie.first_air_date)
                         }
                     `}
                 </h1>
-                <p className={style.overview} style={{ opacity: overView }}>{movie.overview}</p>
+                <p className={style.overview} style={{ opacity: overView }}>{subOverView(movie.overview)}</p>
+
+                <button onClick={
+                    () => 
+                    setFavoriteMovie(movie, setFavorites, favorites)} 
+                    className={style.favBtn}  
+                    style={{ opacity: overView }}>
+                        <i className={'fas fa-plus'}></i> 
+                </button>
+
                 <section className={style.rating}>
+                    
                     <i className="fas fa-star"></i>
                     <p>{movie.vote_average}</p>
                 </section>

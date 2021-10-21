@@ -29,10 +29,34 @@
 }
 
 .title {
-    font-size: 1em;
+    font-size: .85em;
     color: var(--white);
     padding: 0 .6em;
     margin: .6em 0;
+}
+
+.favBtn {
+    background: transparent;
+    position: absolute;
+    bottom: .3em;
+    left: .3em;
+    margin: 0;
+    color: var(--fav);
+    outline: none;
+    border: 2px solid var(--fav);
+    border-radius: 50%;
+    font-size: 1em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: opacity 100ms;
+    transition-delay: 400ms;
+}
+
+.favBtn:hover {
+    background: var(--fav);
+    color: var(--black);
+    border: 2px solid var(--black);
+
 }
 
 .overview {
@@ -42,7 +66,7 @@
     margin: 1em 0;
     color: var(--white);
     background: rgba(0,0,0,.4);
-    transition: opacity 0.6s ease-in-out;
+    transition: opacity 400ms;
 }
 
 p { margin: 0 .3em 0 .5em; }

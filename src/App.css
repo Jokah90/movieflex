@@ -1,7 +1,8 @@
 :root {
-  --blue: #4B769E;
-
+  /* --blue: #376086; */
+  --blue: #272727;
   --white: #EAEAEA;
+  --fav: rgba(234, 234, 234, 0.8);
 
   --yellow: #E8C341;
 
